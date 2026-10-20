@@ -1,0 +1,341 @@
+{
+ "_comment": "DESIGN.md v0.3 §4 값 그대로. 모든 말단 값은 {value, source, kind}. value=null 은 미정(CR3) — 엔진이 임의 값으로 채우지 않는다.",
+ "meta": {
+  "now": {
+   "value": "09:20",
+   "source": "USER",
+   "kind": "fixed"
+  },
+  "arrival": {
+   "value": "09:20",
+   "source": "D01",
+   "kind": "fixed"
+  },
+  "departure": {
+   "value": "21:30",
+   "source": "D01",
+   "kind": "fixed"
+  },
+  "party": {
+   "value": 4,
+   "source": "D01",
+   "kind": "fixed"
+  }
+ },
+ "deadlines": {
+  "C_entry": {
+   "value": "18:40",
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "O_indoor": {
+   "value": "18:00",
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "M_window_start": {
+   "value": "10:30",
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "M_window_end": {
+   "value": "11:00",
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "M_max_stay": {
+   "value": 120,
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "M_free_cancel": {
+   "value": "09:30",
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "R_time": {
+   "value": "13:00",
+   "source": "D02",
+   "kind": "fixed"
+  },
+  "R_grace": {
+   "value": 0,
+   "source": "USER",
+   "kind": "fixed"
+  }
+ },
+ "travel": {
+  "station_M": {
+   "value": [
+    25,
+    35
+   ],
+   "source": "D03",
+   "kind": "estimate"
+  },
+  "M_R": {
+   "value": [
+    20,
+    25
+   ],
+   "source": "D03",
+   "kind": "estimate"
+  },
+  "R_P": {
+   "value": [
+    25,
+    35
+   ],
+   "source": "D03",
+   "kind": "estimate"
+  },
+  "P_O": {
+   "value": [
+    30,
+    45
+   ],
+   "source": "D03",
+   "kind": "estimate"
+  },
+  "O_C": {
+   "value": [
+    20,
+    30
+   ],
+   "source": "D03",
+   "kind": "estimate"
+  }
+ },
+ "travel_window": {
+  "window_start": {
+   "value": "15:00",
+   "source": "D06",
+   "kind": "forecast"
+  },
+  "window_end": {
+   "value": "17:00",
+   "source": "D06",
+   "kind": "forecast"
+  },
+  "subway_extra": {
+   "value": [
+    20,
+    30
+   ],
+   "source": "D06",
+   "kind": "forecast"
+  },
+  "bus": {
+   "value": [
+    35,
+    50
+   ],
+   "source": "D06",
+   "kind": "estimate"
+  },
+  "taxi": {
+   "value": [
+    20,
+    35
+   ],
+   "source": "D06",
+   "kind": "estimate"
+  }
+ },
+ "weather": [
+  {
+   "issued": {
+    "value": "07:00",
+    "source": "D04",
+    "kind": "fixed"
+   },
+   "window": {
+    "value": [
+     "14:00",
+     "17:00"
+    ],
+    "source": "D04",
+    "kind": "forecast"
+   },
+   "rain_pct": {
+    "value": 60,
+    "source": "D04",
+    "kind": "forecast"
+   },
+   "wind_ms": {
+    "value": 6,
+    "source": "D04",
+    "kind": "forecast"
+   }
+  },
+  {
+   "issued": {
+    "value": "09:00",
+    "source": "D04",
+    "kind": "fixed"
+   },
+   "window": {
+    "value": [
+     "15:00",
+     "18:00"
+    ],
+    "source": "D04",
+    "kind": "forecast"
+   },
+   "rain_pct": {
+    "value": 80,
+    "source": "D04",
+    "kind": "forecast"
+   },
+   "wind_ms": {
+    "value": 9,
+    "source": "D04",
+    "kind": "forecast"
+   }
+  }
+ ],
+ "facility": {
+  "O_deck": {
+   "value": "강풍 시 야외 데크를 닫을 수 있음 (폐쇄 미확정)",
+   "source": "D05",
+   "kind": "forecast"
+  },
+  "O_indoor": {
+   "value": "실내 전망층 정상 운영 예정",
+   "source": "D05",
+   "kind": "forecast"
+  },
+  "P_program": {
+   "value": "우천 시 일부 야외 프로그램 현장 취소 가능",
+   "source": "D05",
+   "kind": "forecast"
+  }
+ },
+ "prefs": {
+  "budget": {
+   "value": 60000,
+   "source": "D07",
+   "kind": "fixed"
+  },
+  "taxi_max": {
+   "value": 1,
+   "source": "D07",
+   "kind": "fixed"
+  },
+  "rain_outdoor_max": {
+   "value": 30,
+   "source": "D07",
+   "kind": "fixed"
+  }
+ },
+ "plan": {
+  "M": {
+   "value": "10:30",
+   "source": "D01",
+   "kind": "fixed"
+  },
+  "R": {
+   "value": "13:00",
+   "source": "D01",
+   "kind": "fixed"
+  },
+  "P": {
+   "value": "15:00",
+   "source": "D01",
+   "kind": "fixed"
+  },
+  "O": {
+   "value": "17:00",
+   "source": "D01",
+   "kind": "fixed"
+  },
+  "C": {
+   "value": "19:00",
+   "source": "D01",
+   "kind": "fixed"
+  }
+ },
+ "user_times": {
+  "dep_M": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "dep_R": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "dep_P": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "dep_O": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "P_O_mode": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "taxi_uses": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  }
+ },
+ "durations": {
+  "M_stay": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "R_meal": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "P_stay": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "O_stay": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  }
+ },
+ "fares": {
+  "transit_per_person": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "taxi_per_ride": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  }
+ },
+ "policy": {
+  "rain_threshold_pct": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "wind_threshold_ms": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  },
+  "soft_order": {
+   "value": null,
+   "source": "USER",
+   "kind": "assumption"
+  }
+ }
+}

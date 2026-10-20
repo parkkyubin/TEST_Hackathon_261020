@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.claude/
+# 원천 자료 원문·개인 정보 파일은 저장소에 넣지 않음
+*.txt.local
+*.docx
+*.pdf
+CLAUDE.md

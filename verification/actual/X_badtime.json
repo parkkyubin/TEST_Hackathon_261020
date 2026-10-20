@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "errors": [
+    "meta.arrival: 시각 형식 오류 '9시20분' (HH:MM, 예 09:20)."
+  ]
+}

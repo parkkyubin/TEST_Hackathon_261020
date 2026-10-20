@@ -1,0 +1,6 @@
+{
+  "ok": false,
+  "errors": [
+    "user_times.P_O_mode: subway, bus, taxi 중 하나여야 합니다. 받은 값: plane"
+  ]
+}

@@ -1,0 +1,4 @@
+{"case": "LLM-1", "ok": true, "blocks": [1, 3, 8, 7], "llm_status": "LLM 미연결", "detail": "환경변수 미설정: ANTHROPIC_BASE_URL, ANTHROPIC_API_KEY, LLM_MODEL", "text_len": 0, "text": ""}
+{"case": "LLM-2", "ok": true, "blocks": [1, 3, 8, 7], "llm_status": "LLM 미연결", "detail": "AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x", "text_len": 0, "text": ""}
+{"case": "LLM-3", "ok": true, "blocks": [1, 3, 8, 7], "llm_status": "LLM 미연결", "detail": "APIConnectionError: Connection error.", "text_len": 0, "text": ""}
+{"case": "LLM-4", "ok": true, "blocks": [1, 3, 8, 7], "llm_status": "LLM 미연결", "detail": "환경변수 미설정: LLM_MODEL", "text_len": 0, "text": ""}

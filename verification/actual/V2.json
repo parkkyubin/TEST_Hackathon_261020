@@ -1,0 +1,899 @@
+{
+  "conclusion": [
+    {
+      "text": "공연 입장 마감 18:40(Hard)을 지키려면 전망대에서 18:10(최대 소요 기준)~18:20(최소 소요 기준)까지 출발해야 합니다. 가장 임박한 확인: 09:30 전 미술관 유지/취소 결정.",
+      "sources": [
+        "D02",
+        "D03",
+        "H01",
+        "D01"
+      ]
+    }
+  ],
+  "badge": "SAFE",
+  "badge_note": "Hard 판정 1건 기준 · 미판정 2건: 전망대 도착(P 출발 시각·수단 미입력), 공연 도착(전망대 출발 시각 미입력)",
+  "why": [
+    {
+      "text": "공연 입장 마감 18:40(확정 조건)에서 전망대→공연장 20~30분(평상시 추정)을 빼면 전망대 최종 출발은 18:10~18:20입니다.",
+      "sources": [
+        "D02",
+        "D03"
+      ]
+    },
+    {
+      "text": "P→O 지하철은 이동 구간이 점검 시간대 15:00~17:00와 1분이라도 겹치면 50~75분(점검 안내 범위 전체, U09), 겹치지 않으면 평상시 범위로 계산합니다. 전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장 기준 출발 SAFE 구간: 13:00~16:45, 17:00~17:15.",
+      "sources": [
+        "D03",
+        "D06",
+        "AP2",
+        "U09",
+        "D02"
+      ]
+    },
+    {
+      "text": "미술관 입장 마감 11:00: 서울역 09:20 도착 후 25~35분 이동 → 도착 09:45~09:55, 상태 SAFE.",
+      "sources": [
+        "D01",
+        "D03",
+        "D02"
+      ]
+    }
+  ],
+  "unknown": [
+    {
+      "text": "U01 21:30 서울역 출발 가능 여부 — 공연 종료 시각·공연장→서울역 소요 자료 없음",
+      "sources": [
+        "D01",
+        "D02",
+        "U01"
+      ]
+    },
+    {
+      "text": "HB4 체류시간 M_stay, R_meal, P_stay, O_stay — 자료에 없음, 엔진이 임의 값으로 채우지 않음(사용자 입력 시 참고 일정표에만 반영)",
+      "sources": [
+        "A02",
+        "A03",
+        "A04",
+        "HB4"
+      ]
+    },
+    {
+      "text": "U03 요금·예산 충족 여부 — 요금 미정, 예산 해석 미정(HB6)",
+      "sources": [
+        "D07",
+        "U03",
+        "HB6"
+      ]
+    },
+    {
+      "text": "HB2 날씨 기반 한강공원 유지/축소 — 강수·풍속 임계값 미정 — 예보 사실만 표시",
+      "sources": [
+        "D04",
+        "HB2"
+      ]
+    },
+    {
+      "text": "U10 점검 시간대 밖 P→O 버스·택시 소요 — 자료(D06)는 점검 시간대 안내만 있음",
+      "sources": [
+        "D03",
+        "D06",
+        "U10"
+      ]
+    },
+    {
+      "text": "U09 점검 지연의 실제 발생 구간 — 겹치면 D06 범위 전체 적용(비례 배분 미적용)",
+      "sources": [
+        "D06",
+        "U09"
+      ]
+    },
+    {
+      "text": "B5 구간별 출발 예정 시각 — 미입력 — 최종 출발 시각만 제시하고 도착 상태는 판정하지 않음",
+      "sources": [
+        "USER"
+      ]
+    },
+    {
+      "text": "U05 전망대 데크 폐쇄 기준 풍속 — 공지에 기준 없음",
+      "sources": [
+        "D05",
+        "U05"
+      ]
+    }
+  ],
+  "human_next": [
+    {
+      "id": "H01",
+      "key": 570,
+      "when": "09:30 전",
+      "short": "미술관 유지/취소 결정",
+      "text": "H01 [09:30 전] 미술관 예약 유지/취소 결정 (남은 10분). 사실: 09:30까지 취소 시 전액 환불, 이후 환불 불가. 입장 마감 판정: SAFE",
+      "sources": [
+        "D02",
+        "H01",
+        "D01",
+        "D03",
+        "D02"
+      ],
+      "text_full": "H01 [09:30 전] 미술관 예약 유지/취소 결정 (남은 10분). 사실: 09:30까지 취소 시 전액 환불, 이후 환불 불가. 입장 마감 판정: SAFE"
+    },
+    {
+      "id": "H02",
+      "key": 900,
+      "when": "P 이동 전",
+      "short": "최신 예보 재확인",
+      "text": "H02 [P 이동 전] 최신 예보 재확인. 현재 09:00 발표 예보: 15:00~18:00 강수확률 95%, 풍속 14m/s (예보이며 변동 가능). 비 올 때 연속 야외 30분 이상 회피 선호 — P 유지/축소는 판정하지 않음(HB2)",
+      "sources": [
+        "D04",
+        "D07",
+        "H02"
+      ],
+      "text_full": "H02 [P 이동 전] 최신 예보 재확인. 현재 09:00 발표 예보: 15:00~18:00 강수확률 95%, 풍속 14m/s (예보이며 변동 가능). 비 올 때 연속 야외 30분 이상 회피 선호 — P 유지/축소는 판정하지 않음(HB2)"
+    },
+    {
+      "id": "H08",
+      "key": 900,
+      "when": "P 진입 전",
+      "short": "P 축소/생략 시 동의",
+      "text": "H08 [P 진입 전] 한강공원 축소·생략을 고를 경우 희망자 1명 동의 (공연보다 우선순위 낮음)",
+      "sources": [
+        "D07",
+        "H08"
+      ],
+      "text_full": "H08 [P 진입 전] 한강공원 축소·생략을 고를 경우 희망자 1명 동의 (공연보다 우선순위 낮음)"
+    },
+    {
+      "id": "H03",
+      "key": 901,
+      "when": "P 출발 전",
+      "short": "P→O 실시간 지연·택시 확인",
+      "text": "H03 [P 출발 전] P→O 실시간 지연·택시 호출 가능 여부 확인 후 수단 선택 (추천 없음). 판단 정보: 지하철 30~45분/50~75분, 최종 출발 17:15(최대)/17:30(최소); 버스 35~50분, 최종 출발 16:59(최대)/16:59(최소); 택시 20~35분, 최종 출발 16:59(최대)/16:59(최소)",
+      "sources": [
+        "D03",
+        "D06",
+        "H03"
+      ],
+      "text_full": "H03 [P 출발 전] P→O 실시간 지연·택시 호출 가능 여부 확인 후 수단 선택 (추천 없음). 판단 정보: 지하철 30~45분/50~75분, 최종 출발 17:15(최대)/17:30(최소); 버스 35~50분, 최종 출발 16:59(최대)/16:59(최소); 택시 20~35분, 최종 출발 16:59(최대)/16:59(최소)"
+    },
+    {
+      "id": "H04",
+      "key": 901,
+      "when": "택시 사용 전",
+      "short": "예산 합의",
+      "text": "H04 [택시 사용 전] 이동비 4명 합계 60000원 범위 일행 합의, 택시 1회 정도. 요금 미정(U03) — 예산 충족 판정 안 함",
+      "sources": [
+        "D07",
+        "H04",
+        "U03"
+      ],
+      "text_full": "H04 [택시 사용 전] 이동비 4명 합계 60000원 범위 일행 합의, 택시 1회 정도. 요금 미정(U03) — 예산 충족 판정 안 함"
+    },
+    {
+      "id": "H05",
+      "key": 1020,
+      "when": "O 도착 시",
+      "short": "데크 운영 현장 확인",
+      "text": "H05 [O 도착 시] 전망대 야외 데크 운영 여부 현장 확인 (공지: 강풍 시 야외 데크를 닫을 수 있음 (폐쇄 미확정))",
+      "sources": [
+        "D05",
+        "H05"
+      ],
+      "text_full": "H05 [O 도착 시] 전망대 야외 데크 운영 여부 현장 확인 (공지: 강풍 시 야외 데크를 닫을 수 있음 (폐쇄 미확정))"
+    },
+    {
+      "id": "H06",
+      "key": 1120,
+      "when": "사전",
+      "short": "21:30 출발 확인",
+      "text": "H06 [사전] 공연 종료 시각·공연장→서울역 이동시간 확인 (21:30 출발, 판정 불가 U01)",
+      "sources": [
+        "D01",
+        "U01",
+        "H06"
+      ],
+      "text_full": "H06 [사전] 공연 종료 시각·공연장→서울역 이동시간 확인 (21:30 출발, 판정 불가 U01)"
+    }
+  ],
+  "actions": [
+    {
+      "text": "09:30 [결정 기한] 미술관 유지/취소 결정 (H01)",
+      "sources": [
+        "D02",
+        "H01"
+      ],
+      "key": 570
+    },
+    {
+      "text": "11:00 [Hard] 미술관 입장 마감 (10:30부터 입장) — SAFE",
+      "sources": [
+        "D01",
+        "D03",
+        "D02"
+      ],
+      "key": 660
+    },
+    {
+      "text": "12:30 [Hard] 미술관 입장 후 120분 이내 퇴장 (10:30 입장 시)",
+      "sources": [
+        "D02"
+      ],
+      "key": 750
+    },
+    {
+      "text": "12:35 [참고] 식당 13:00 도착을 위한 미술관 출발 12:35(최대 소요)/12:40(최소 소요)",
+      "sources": [
+        "D02",
+        "D03"
+      ],
+      "key": 755
+    },
+    {
+      "text": "12:50 [Soft] 식당 좌석 보장 13:15: 미술관 출발 12:50(최대 소요)/12:55(최소 소요)",
+      "sources": [
+        "D02",
+        "D03"
+      ],
+      "key": 770
+    },
+    {
+      "text": "16:59 [Hard] 전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장을 위한 P 출발 (버스): SAFE 구간 14:11~16:59",
+      "sources": [
+        "D03",
+        "D06",
+        "D02"
+      ],
+      "key": 1019
+    },
+    {
+      "text": "16:59 [Hard] 전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장을 위한 P 출발 (택시): SAFE 구간 14:26~16:59",
+      "sources": [
+        "D03",
+        "D06",
+        "D02"
+      ],
+      "key": 1019
+    },
+    {
+      "text": "17:15 [Hard] 전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장을 위한 P 출발 (지하철): SAFE 구간 13:00~16:45, 17:00~17:15",
+      "sources": [
+        "D03",
+        "D06",
+        "D02"
+      ],
+      "key": 1035
+    },
+    {
+      "text": "18:00 [Hard] 전망대 실내 입장 마감",
+      "sources": [
+        "D02"
+      ],
+      "key": 1080
+    },
+    {
+      "text": "18:10 [Hard] 공연 18:40 입장을 위한 전망대 출발 18:10(최대 소요)/18:20(최소 소요)",
+      "sources": [
+        "D02",
+        "D03"
+      ],
+      "key": 1090
+    },
+    {
+      "text": "18:40 [Hard] 공연 입장 마감 (최우선)",
+      "sources": [
+        "D02",
+        "D01"
+      ],
+      "key": 1120
+    }
+  ],
+  "judgments": [
+    {
+      "id": "J-M-ENTRY",
+      "label": "Hard",
+      "title": "미술관 입장 마감",
+      "status": "SAFE",
+      "min_basis": {
+        "arrive": 585,
+        "deadline": 660
+      },
+      "max_basis": {
+        "arrive": 595,
+        "deadline": 660
+      },
+      "sources": [
+        "D01",
+        "D03",
+        "D02"
+      ],
+      "assumptions": [],
+      "data": {
+        "arr": [
+          585,
+          595
+        ],
+        "window_start": 630,
+        "deadline": 660
+      }
+    },
+    {
+      "id": "J-M-STAY",
+      "label": "Hard",
+      "title": "미술관 퇴장 한도",
+      "status": "INFO",
+      "min_basis": {
+        "entry": 630,
+        "exit_limit": 750
+      },
+      "max_basis": {
+        "entry": 630,
+        "exit_limit": 750
+      },
+      "sources": [
+        "D02"
+      ],
+      "assumptions": [],
+      "data": {
+        "max_stay": 120,
+        "example_entry": 630,
+        "example_exit": 750
+      }
+    },
+    {
+      "id": "J-R-LASTDEP",
+      "label": "Soft",
+      "title": "식당 도착을 위한 미술관 최종 출발",
+      "status": "INFO",
+      "min_basis": {
+        "last_dep_13:00": 760,
+        "last_dep_grace": 775
+      },
+      "max_basis": {
+        "last_dep_13:00": 755,
+        "last_dep_grace": 770
+      },
+      "sources": [
+        "D02",
+        "D03"
+      ],
+      "assumptions": [],
+      "data": {
+        "r_time": 780,
+        "grace_end": 795,
+        "on_time": [
+          755,
+          760
+        ],
+        "grace": [
+          770,
+          775
+        ]
+      }
+    },
+    {
+      "id": "J-O-LASTDEP",
+      "label": "Hard",
+      "title": "공연 입장을 위한 전망대 최종 출발",
+      "status": "INFO",
+      "min_basis": {
+        "last_dep": 1100
+      },
+      "max_basis": {
+        "last_dep": 1090
+      },
+      "sources": [
+        "D02",
+        "D03"
+      ],
+      "assumptions": [],
+      "data": {
+        "c_entry": 1120,
+        "o_c": [
+          20,
+          30
+        ],
+        "max_basis": 1090,
+        "min_basis": 1100
+      }
+    }
+  ],
+  "compare": [
+    {
+      "mode": "subway",
+      "label": "지하철",
+      "deadline": 1080,
+      "deadline_min_basis": 1080,
+      "binding": {
+        "max_basis": 1080,
+        "min_basis": 1080,
+        "binding": "전망대 실내 입장",
+        "text": "전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장",
+        "detail": "전망대 실내 입장 18:00 · 공연 18:40 − 전망대→공연장 20~30분 = 18:10(최대 소요)/18:20(최소 소요), 전망대 체류 미포함",
+        "sources": [
+          "D02",
+          "D02",
+          "D03"
+        ]
+      },
+      "intervals": [
+        {
+          "from": 780,
+          "to": 855,
+          "status": "SAFE",
+          "range": [
+            30,
+            45
+          ],
+          "overlap": false,
+          "why": ""
+        },
+        {
+          "from": 856,
+          "to": 1005,
+          "status": "SAFE",
+          "range": [
+            50,
+            75
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1006,
+          "to": 1019,
+          "status": "AT_RISK",
+          "range": [
+            50,
+            75
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1020,
+          "to": 1035,
+          "status": "SAFE",
+          "range": [
+            30,
+            45
+          ],
+          "overlap": false,
+          "why": ""
+        },
+        {
+          "from": 1036,
+          "to": 1050,
+          "status": "AT_RISK",
+          "range": [
+            30,
+            45
+          ],
+          "overlap": false,
+          "why": ""
+        },
+        {
+          "from": 1051,
+          "to": 1080,
+          "status": "FAIL",
+          "range": [
+            30,
+            45
+          ],
+          "overlap": false,
+          "why": ""
+        }
+      ],
+      "last_dep_max_basis": 1035,
+      "last_dep_min_basis": 1050
+    },
+    {
+      "mode": "bus",
+      "label": "버스",
+      "deadline": 1080,
+      "deadline_min_basis": 1080,
+      "binding": {
+        "max_basis": 1080,
+        "min_basis": 1080,
+        "binding": "전망대 실내 입장",
+        "text": "전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장",
+        "detail": "전망대 실내 입장 18:00 · 공연 18:40 − 전망대→공연장 20~30분 = 18:10(최대 소요)/18:20(최소 소요), 전망대 체류 미포함",
+        "sources": [
+          "D02",
+          "D02",
+          "D03"
+        ]
+      },
+      "intervals": [
+        {
+          "from": 780,
+          "to": 850,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        },
+        {
+          "from": 851,
+          "to": 1019,
+          "status": "SAFE",
+          "range": [
+            35,
+            50
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1020,
+          "to": 1080,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        }
+      ],
+      "last_dep_max_basis": 1019,
+      "last_dep_min_basis": 1019
+    },
+    {
+      "mode": "taxi",
+      "label": "택시",
+      "deadline": 1080,
+      "deadline_min_basis": 1080,
+      "binding": {
+        "max_basis": 1080,
+        "min_basis": 1080,
+        "binding": "전망대 실내 입장",
+        "text": "전망대 도착 한도 18:00(최대 소요 기준)/18:00(최소 소요 기준) — 구속 조건: 전망대 실내 입장",
+        "detail": "전망대 실내 입장 18:00 · 공연 18:40 − 전망대→공연장 20~30분 = 18:10(최대 소요)/18:20(최소 소요), 전망대 체류 미포함",
+        "sources": [
+          "D02",
+          "D02",
+          "D03"
+        ]
+      },
+      "intervals": [
+        {
+          "from": 780,
+          "to": 865,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        },
+        {
+          "from": 866,
+          "to": 1019,
+          "status": "SAFE",
+          "range": [
+            20,
+            35
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1020,
+          "to": 1080,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        }
+      ],
+      "last_dep_max_basis": 1019,
+      "last_dep_min_basis": 1019
+    }
+  ],
+  "compare_ref": [
+    {
+      "mode": "subway",
+      "label": "지하철",
+      "deadline": 1020,
+      "deadline_min_basis": 1020,
+      "binding": {
+        "text": "전망대 17:00 도착",
+        "sources": []
+      },
+      "intervals": [
+        {
+          "from": 780,
+          "to": 855,
+          "status": "SAFE",
+          "range": [
+            30,
+            45
+          ],
+          "overlap": false,
+          "why": ""
+        },
+        {
+          "from": 856,
+          "to": 945,
+          "status": "SAFE",
+          "range": [
+            50,
+            75
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 946,
+          "to": 970,
+          "status": "AT_RISK",
+          "range": [
+            50,
+            75
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 971,
+          "to": 1019,
+          "status": "FAIL",
+          "range": [
+            50,
+            75
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1020,
+          "to": 1020,
+          "status": "FAIL",
+          "range": [
+            30,
+            45
+          ],
+          "overlap": false,
+          "why": ""
+        }
+      ],
+      "last_dep_max_basis": 945,
+      "last_dep_min_basis": 970
+    },
+    {
+      "mode": "bus",
+      "label": "버스",
+      "deadline": 1020,
+      "deadline_min_basis": 1020,
+      "binding": {
+        "text": "전망대 17:00 도착",
+        "sources": []
+      },
+      "intervals": [
+        {
+          "from": 780,
+          "to": 850,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        },
+        {
+          "from": 851,
+          "to": 970,
+          "status": "SAFE",
+          "range": [
+            35,
+            50
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 971,
+          "to": 985,
+          "status": "AT_RISK",
+          "range": [
+            35,
+            50
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 986,
+          "to": 1019,
+          "status": "FAIL",
+          "range": [
+            35,
+            50
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1020,
+          "to": 1020,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        }
+      ],
+      "last_dep_max_basis": 970,
+      "last_dep_min_basis": 985
+    },
+    {
+      "mode": "taxi",
+      "label": "택시",
+      "deadline": 1020,
+      "deadline_min_basis": 1020,
+      "binding": {
+        "text": "전망대 17:00 도착",
+        "sources": []
+      },
+      "intervals": [
+        {
+          "from": 780,
+          "to": 865,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        },
+        {
+          "from": 866,
+          "to": 985,
+          "status": "SAFE",
+          "range": [
+            20,
+            35
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 986,
+          "to": 1000,
+          "status": "AT_RISK",
+          "range": [
+            20,
+            35
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1001,
+          "to": 1019,
+          "status": "FAIL",
+          "range": [
+            20,
+            35
+          ],
+          "overlap": true,
+          "why": ""
+        },
+        {
+          "from": 1020,
+          "to": 1020,
+          "status": "UNKNOWN",
+          "range": null,
+          "overlap": false,
+          "why": "U10 점검 시간대 밖 소요 자료 없음"
+        }
+      ],
+      "last_dep_max_basis": 985,
+      "last_dep_min_basis": 1000
+    }
+  ],
+  "reference": [
+    {
+      "place": "서울역 도착",
+      "plan": 560,
+      "calc": null,
+      "sources": [
+        "D01"
+      ],
+      "user": false
+    },
+    {
+      "place": "미술관 M",
+      "plan": 630,
+      "calc": [
+        "arr",
+        585,
+        595
+      ],
+      "sources": [
+        "D01",
+        "D03"
+      ],
+      "user": false
+    },
+    {
+      "place": "식당 R",
+      "plan": 780,
+      "calc": null,
+      "sources": [
+        "D01",
+        "D02"
+      ],
+      "user": false
+    },
+    {
+      "place": "식당 R 출발",
+      "plan": null,
+      "calc": null,
+      "sources": [
+        "U02"
+      ],
+      "user": false,
+      "note": "식사 시간 미정 (U02, HB4)"
+    },
+    {
+      "place": "한강공원 P",
+      "plan": 900,
+      "calc": null,
+      "sources": [
+        "D01"
+      ],
+      "user": false
+    },
+    {
+      "place": "전망대 O",
+      "plan": 1020,
+      "calc": null,
+      "sources": [
+        "D01"
+      ],
+      "user": false,
+      "note": "원안 도착 시각은 Hard 아님 — 아래 '원안 17:00 도착 기준' 비교표 참고"
+    },
+    {
+      "place": "공연장 C",
+      "plan": 1140,
+      "calc": null,
+      "sources": [
+        "D01",
+        "D02"
+      ],
+      "user": false
+    }
+  ],
+  "kpi": [
+    {
+      "title": "전망대 최종 출발 (공연 18:40 기준)",
+      "value": "18:10 (최대 소요) / 18:20 (최소 소요)",
+      "sources": [
+        "D02",
+        "D03"
+      ]
+    },
+    {
+      "title": "P 출발 SAFE 구간 (지하철, 전망대 도착 한도 18:00 기준)",
+      "value": "13:00~16:45, 17:00~17:15",
+      "sources": [
+        "D03",
+        "D06",
+        "AP2",
+        "U09",
+        "D02",
+        "D02",
+        "D03"
+      ]
+    },
+    {
+      "title": "확인 필요 항목 / 최근접 마감",
+      "value": "7건 / 09:30 전 미술관 유지/취소 결정",
+      "sources": [
+        "D02",
+        "H01",
+        "D01",
+        "D03"
+      ]
+    }
+  ],
+  "kpi_note": "KPI 구성: 제안(미승인) — DESIGN §5.2",
+  "ok": true,
+  "lint": [],
+  "llm": {
+    "status": "LLM 미사용",
+    "text": "",
+    "detail": "사용자가 LLM 요약을 끔"
+  }
+}
